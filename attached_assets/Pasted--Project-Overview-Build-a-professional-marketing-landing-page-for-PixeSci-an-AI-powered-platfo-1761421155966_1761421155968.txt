@@ -1,0 +1,261 @@
+  Project Overview
+
+  Build a professional marketing landing page for PixeSci - an AI-powered platform that automates scientific software through natural language commands. This is a
+  marketing-focused site designed to capture user interest and waitlist signups, NOT a business pitch or revenue-focused page.
+
+  Target Audience
+
+  - PhD students and postdocs struggling with complex software
+  - Core facility managers handling repetitive analysis requests
+  - Research scientists who want to focus on science, not software
+  - Lab technicians who need to use expensive tools they weren't trained on
+  - PIs and lab directors wanting to standardize workflows across their teams
+
+  Brand Colors & Theme
+
+  Use the PixeSci app color scheme:
+  - Primary: Deep scientific blue (#1e3a8a)
+  - Secondary: Bright cyan/teal (#06b6d4)
+  - Accent: Electric blue (#3b82f6)
+  - Background: Clean white (#ffffff) with subtle gray sections (#f8fafc)
+  - Text: Dark gray (#1f2937) for body, white for CTAs
+  - Success/CTA: Vibrant green (#10b981)
+
+  Visual Style: Modern, clean, scientific aesthetic with subtle gradients and professional imagery.
+
+  Technical Stack
+
+  Build using:
+  - React + Vite (for fast development)
+  - Tailwind CSS (for rapid styling with the color scheme above)
+  - Framer Motion (for smooth animations)
+  - React Hook Form (for waitlist form)
+  - Responsive design (mobile-first approach)
+
+  Page Structure & Content
+
+  1. Hero Section
+
+  HEADLINE: "Stop Fighting Software. Start Doing Science."
+  SUBHEADLINE: "AI that turns any scientific tool into a simple conversation.
+                Just tell PixeSci what you need - no menus, no manuals, no frustration."
+
+  PRIMARY CTA: "Join the Waitlist"
+  SECONDARY CTA: "Watch 60-Second Demo"
+
+  HERO VISUAL: Split-screen animation showing:
+  - LEFT: Frustrated researcher clicking through complex ImageJ menus (grayscale, chaotic)
+  - RIGHT: Same researcher typing "segment my cells" and getting instant results (colorful, calm)
+
+  FLOATING ELEMENTS: Subtle icons of scientific tools (microscope, DNA, charts) with gentle motion
+
+  2. Problem Section
+
+  HEADING: "Recognize This Daily Struggle?"
+
+  PAIN POINTS (with icons):
+  🖱️ "Clicking through 50 menus just to open an image"
+  📚 "Reading 200-page manuals for simple analysis"
+  ⏰ "Spending weeks on what should take minutes"
+  💸 "Expensive software sitting unused because it's too complex"
+  🔄 "Redoing analysis because you forgot one step"
+
+  TRANSITION: "What if you could just... ask for what you need?"
+
+  3. Solution Demo (Interactive)
+
+  HEADING: "AI That Speaks Your Language"
+
+  DEMO INTERFACE:
+  Show a chat-style interface where users can click example prompts:
+  → "Segment cells and count them"
+  → "Create a publication-ready figure"
+  → "Analyze particle morphology"
+  → "Compare fluorescence intensity"
+
+  RESULT ANIMATION: Show AI automatically executing the workflow with visual progress
+
+  BENEFIT CALLOUTS:
+  ✨ "90% faster than manual workflows"
+  ✨ "Works with tools you already use"
+  ✨ "Reproducible every time"
+
+  4. Tool Integration Showcase
+
+  HEADING: "Works With Everything You Already Use"
+
+  TOOL GRID (with animated logos):
+  - ImageJ/Fiji     - MATLAB          - GraphPad Prism
+  - Napari         - CellProfiler     - Origin
+  - Imaris         - FlowJo          - R/RStudio
+  - Python/Jupyter - Excel           - And 40+ more...
+
+  TAGLINE: "No installation. No integration. Just start talking."
+
+  5. User Stories Section
+
+  HEADING: "Real Scientists, Real Results"
+
+  STORY CARDS (hoverable with before/after):
+
+  PhD STUDENT:
+  "Before: Spent 3 days learning ImageJ for cell counting
+  After: 'Count my cells' → Done in 30 seconds"
+
+  CORE FACILITY MANAGER:
+  "Before: Training every user on 10 different software packages
+  After: Everyone just describes what they need"
+
+  POSTDOC:
+  "Before: Analysis bottleneck delayed my publication
+  After: Generated all figures in one afternoon"
+
+  6. Features That Matter
+
+  HEADING: "Built for How Scientists Actually Work"
+
+  FEATURE GRID:
+  🗣️ Plain English Commands
+     "No coding, no clicking, just conversation"
+
+  🔄 Automated Workflows
+     "From raw data to publication figure automatically"
+
+  📊 Publication Ready
+     "Professional outputs that pass peer review"
+
+  👥 Team Collaboration
+     "Share workflows instantly across your lab"
+
+  🔒 Research Grade Security
+     "Your data stays private and secure"
+
+  ⚡ Lightning Fast
+     "Seconds, not hours"
+
+  7. Social Proof (Testimonials)
+
+  HEADING: "Join Scientists Who've Made the Switch"
+
+  TESTIMONIAL CARDS:
+  "PixeSci gave me my evenings back. What used to take me all weekend
+  now happens while I grab coffee."
+  — Dr. Sarah Chen, Cell Biology PhD, Stanford
+
+  "My students can now focus on experimental design instead of
+  fighting with software interfaces."
+  — Prof. Michael Rodriguez, Principal Investigator, MIT
+
+  "We increased our core facility throughput by 300% without hiring anyone."
+  — Jennifer Kim, Core Facility Manager, UCSF
+
+  8. Early Access Benefits
+
+  HEADING: "Be Among the First to Experience the Future"
+
+  EXCLUSIVE BENEFITS:
+  🎯 Early access to beta (limited spots)
+  🎓 Free training sessions with our team
+  💰 Founding user pricing (50% off first year)
+  🚀 Direct input on feature development
+  🏆 Recognition as a founding research partner
+
+  URGENCY: "Only 200 early access spots available"
+
+  9. Waitlist Form Section
+
+  HEADING: "Ready to Transform Your Research?"
+
+  FORM FIELDS:
+  - Email (required)
+  - Name (required)
+  - Institution
+  - Research Area (dropdown: Cell Biology, Neuroscience, Cancer Research, etc.)
+  - Primary Software You Use (checkboxes: ImageJ, MATLAB, Prism, etc.)
+  - Biggest Analysis Challenge (text area)
+
+  FORM STYLING:
+  - Clean, modern design matching brand colors
+  - Inline validation
+  - Progress indicator
+  - Success animation after submission
+
+  CTA BUTTON: "Secure My Early Access" (bright green, prominent)
+
+  BELOW FORM: "Join 1,247 researchers already on the waitlist"
+  SECURITY NOTE: "We'll never share your email. Unsubscribe anytime."
+
+  10. FAQ Section
+
+  HEADING: "Questions? We've Got Answers."
+
+  FAQ ITEMS (expandable):
+  Q: "Do I need to install anything?"
+  A: "Nope! PixeSci works with your existing software."
+
+  Q: "Will it work with my specific analysis workflow?"
+  A: "PixeSci learns your lab's unique procedures."
+
+  Q: "What about data security?"
+  A: "Your data never leaves your computer."
+
+  Q: "How much will it cost?"
+  A: "Early access users get special pricing. Join the waitlist for details."
+
+  Q: "When will it be available?"
+  A: "Beta launches in Q2 2024. Waitlist members get first access."
+
+  11. Footer
+
+  SIMPLE FOOTER:
+  - PixeSci logo
+  - "Making science software simple"
+  - Email: hello@pixesci.com
+  - Privacy Policy | Terms of Service
+  - Social links (if applicable)
+
+  FINAL CTA: Small "Join Waitlist" button
+
+  Animation & Interaction Guidelines
+
+  Micro-Animations:
+
+  - Hover effects on all buttons and cards
+  - Smooth scrolling between sections
+  - Fade-in animations as elements enter viewport
+  - Tool logos with gentle hover animations
+  - Progress indicators for the demo section
+
+  Performance:
+
+  - Lazy loading for images
+  - Optimized animations (60fps)
+  - Fast loading (<2 seconds)
+  - Mobile responsive (all content works on phone)
+
+  Form Integration
+
+  Set up the waitlist form to:
+  - Collect emails in a database/service
+  - Send confirmation emails
+  - Track signup source
+  - Export data for follow-up campaigns
+  - Add to email marketing platform
+
+  Call-to-Action Strategy
+
+  Primary CTA: "Join the Waitlist" (used 3-4 times)
+  Secondary CTAs: "Watch Demo", "Learn More"
+  CTA Placement: Hero, after problem section, after demo, final footer
+
+  Success Metrics
+
+  The site should optimize for:
+  - Email signups (primary goal)
+  - Time on page (engagement)
+  - Demo completion (interest level)
+  - Mobile conversion (60% of traffic)
+
+  ---
+  Build this as a single-page application with smooth scrolling navigation. Focus on emotional connection - scientists frustrated with software complexity who just want to do 
+  their research. The tone should be empathetic, excited, and confident without being overly technical or salesy.
