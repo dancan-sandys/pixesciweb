@@ -57,7 +57,7 @@ export function ToolsSection() {
           className="text-center"
         >
           <p className="text-xl md:text-2xl font-semibold text-primary">
-            No installation. No integration. Just start talking.
+            Seamless integration with your existing tools.
           </p>
         </motion.div>
       </div>

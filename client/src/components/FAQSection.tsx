@@ -8,16 +8,16 @@ import { motion } from "framer-motion";
 
 const faqs = [
   {
-    question: "Do I need to install anything?",
-    answer: "Nope! PixeSci works with your existing software. No installation required.",
-  },
-  {
     question: "Will it work with my specific analysis workflow?",
     answer: "PixeSci learns your lab's unique procedures and adapts to your specific needs.",
   },
   {
     question: "What about data security?",
     answer: "Your data never leaves your computer. We take research-grade security seriously.",
+  },
+  {
+    question: "How does PixeSci integrate with my existing software?",
+    answer: "PixeSci works alongside your current tools, automating complex workflows through simple natural language commands.",
   },
   {
     question: "How much will it cost?",
