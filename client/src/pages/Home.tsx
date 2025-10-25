@@ -4,7 +4,6 @@ import { DemoSection } from "@/components/DemoSection";
 import { ToolsSection } from "@/components/ToolsSection";
 import { UserStoriesSection } from "@/components/UserStoriesSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { EarlyAccessSection } from "@/components/EarlyAccessSection";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { FAQSection } from "@/components/FAQSection";
@@ -19,7 +18,6 @@ export default function Home() {
       <ToolsSection />
       <UserStoriesSection />
       <FeaturesSection />
-      <TestimonialsSection />
       <EarlyAccessSection />
       <WaitlistForm />
       <FAQSection />
