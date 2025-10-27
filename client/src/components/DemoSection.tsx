@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, Check } from "lucide-react";
 
 const prompts = [
-  "Segment cells and count them",
-  "Create a publication-ready figure",
-  "Analyze particle morphology",
-  "Compare fluorescence intensity",
+  "What's the tumor response to treatment across my imaging data?",
+  "Analyze T-cell activation patterns in these flow cytometry files",
+  "Integrate images, genomics, proteomics, and clinical data for patient cohort",
+  "Compare treatment outcomes across multi-modal datasets",
 ];
 
 const benefits = [

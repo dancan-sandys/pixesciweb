@@ -6,8 +6,8 @@ const stories = [
   {
     role: "PhD Student",
     institution: "Stanford University",
-    before: "Spent 3 days learning ImageJ for cell counting",
-    after: "'Count my cells' → Done in 30 seconds",
+    before: "Struggled to integrate imaging and RNA-seq data",
+    after: "'Analyze tumor microenvironment' → Complete analysis in minutes",
   },
   {
     role: "Core Facility Manager",

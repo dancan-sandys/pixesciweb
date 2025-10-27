@@ -104,7 +104,7 @@ export function HeroSection() {
               className="relative rounded-md w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute bottom-4 left-4 right-4 bg-primary/90 backdrop-blur-sm p-3 rounded-md">
-              <p className="text-sm font-semibold text-primary-foreground">After: "Segment my cells" → Done!</p>
+              <p className="text-sm font-semibold text-primary-foreground">After: "Analyze tumor response" → Answered!</p>
             </div>
           </div>
         </motion.div>
