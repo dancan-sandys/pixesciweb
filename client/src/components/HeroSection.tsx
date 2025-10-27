@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Microscope, Dna, BarChart3 } from "lucide-react";
 import frustratedImage from "@assets/generated_images/Complex_software_interface_showing_frustration_0a50718a.png";
-import happyImage from "@assets/generated_images/Simple_AI_chat_interface_with_results_0b933ae8.png";
+import happyImage from "@assets/generated_images/Scientific_AI_analysis_interface_f1e4b778.png";
 
 export function HeroSection() {
   const handleJoinWaitlist = () => {
@@ -100,7 +100,7 @@ export function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-md blur-xl" />
             <img
               src={happyImage}
-              alt="Simple PixeSci AI interface with results"
+              alt="PixeSci AI interface showing scientific data analysis"
               className="relative rounded-md w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute bottom-4 left-4 right-4 bg-primary/90 backdrop-blur-sm p-3 rounded-md">
