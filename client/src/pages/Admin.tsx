@@ -21,11 +21,26 @@ export default function Admin() {
 
   const { data, isLoading, error } = useQuery<{ success: boolean; signups: WaitlistSignup[] }>({
     queryKey: ["/api/waitlist"],
+    retry: (failureCount, error: any) => {
+      if (error?.message?.includes("401")) {
+        sessionStorage.removeItem("adminAuthenticated");
+        setLocation("/utengano");
+        return false;
+      }
+      return failureCount < 3;
+    },
   });
 
-  const handleLogout = () => {
-    sessionStorage.removeItem("adminAuthenticated");
-    setLocation("/utengano");
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/admin/logout", { method: "POST" });
+      sessionStorage.removeItem("adminAuthenticated");
+      setLocation("/utengano");
+    } catch (error) {
+      console.error("Logout error:", error);
+      sessionStorage.removeItem("adminAuthenticated");
+      setLocation("/utengano");
+    }
   };
 
   return (

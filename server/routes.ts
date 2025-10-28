@@ -21,6 +21,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       if (password === adminPassword) {
+        req.session.isAdmin = true;
         res.json({ success: true });
       } else {
         res.status(401).json({ 
@@ -35,6 +36,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
         error: "Verification failed" 
       });
     }
+  });
+
+  app.post("/api/admin/logout", async (req, res) => {
+    req.session.destroy((err) => {
+      if (err) {
+        console.error("Error destroying session:", err);
+        res.status(500).json({ success: false, error: "Logout failed" });
+      } else {
+        res.json({ success: true });
+      }
+    });
   });
 
   app.post("/api/waitlist", async (req, res) => {
@@ -67,6 +79,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   app.get("/api/waitlist", async (req, res) => {
+    if (!req.session.isAdmin) {
+      res.status(401).json({ 
+        success: false, 
+        error: "Unauthorized - Admin access required" 
+      });
+      return;
+    }
+
     try {
       const signups = await storage.getAllWaitlistSignups();
       res.json({ success: true, signups });
