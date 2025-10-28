@@ -21,8 +21,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       if (password === adminPassword) {
-        req.session.isAdmin = true;
-        res.json({ success: true });
+        req.session.regenerate((err) => {
+          if (err) {
+            console.error("Error regenerating session:", err);
+            res.status(500).json({ success: false, error: "Session error" });
+            return;
+          }
+          req.session.isAdmin = true;
+          res.json({ success: true });
+        });
       } else {
         res.status(401).json({ 
           success: false, 
