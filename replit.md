@@ -6,6 +6,12 @@ PixeSci is a marketing-focused single-page application designed to capture user 
 
 The landing page showcases the product's value proposition through multiple sections: hero, problem statement, interactive demo, tool integration showcase, user stories, features, early access benefits, waitlist form, FAQs, and footer. The primary conversion goal is waitlist signup collection.
 
+**Key Messaging Updates (Latest):**
+- **Multi-tool orchestration focus:** Positioned as "scientific brain" that connects FlowJo → Benchling → Prism → ImageJ workflows
+- **Real biotech software:** All examples use actual tools biotech scientists use daily (Benchling, SnapGene, Chromeleon, CLC Genomics, etc.)
+- **Category organization:** Tools organized by Lab Data & Analysis, Molecular Biology & ELN, Analytical Chemistry, Bioinformatics & Omics
+- **Specific workflows:** Demo prompts show realistic multi-tool workflows like "Analyze flow cytometry in FlowJo, then graph in Prism"
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
