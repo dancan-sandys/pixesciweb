@@ -10,10 +10,6 @@ export function HeroSection() {
     document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleWatchDemo = () => {
-    console.log("Watch Demo clicked");
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-muted/20">
       <motion.div
@@ -69,15 +65,6 @@ export function HeroSection() {
               data-testid="button-hero-join-waitlist"
             >
               Join the Waitlist
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 py-6 min-h-12"
-              onClick={handleWatchDemo}
-              data-testid="button-watch-demo"
-            >
-              Watch 60-Second Demo
             </Button>
           </div>
         </motion.div>
