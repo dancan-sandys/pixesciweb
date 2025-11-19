@@ -49,7 +49,7 @@ export function BeforeAfterSlider() {
 
         <Card className="max-w-4xl mx-auto overflow-hidden">
           <div
-            className="relative h-[400px] cursor-ew-resize select-none"
+            className="relative h-[400px] cursor-ew-resize select-none overflow-hidden"
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
@@ -57,9 +57,12 @@ export function BeforeAfterSlider() {
             onTouchEnd={handleMouseUp}
             data-testid="slider-container"
           >
-            {/* Before (Left) - Base layer */}
-            <div className="absolute inset-0 bg-destructive/10">
-              <div className="p-8 h-full flex flex-col justify-center">
+            {/* Before (Left) */}
+            <div 
+              className="absolute top-0 left-0 bottom-0 bg-destructive/10 overflow-hidden"
+              style={{ width: `${sliderPosition}%` }}
+            >
+              <div className="p-8 h-full flex flex-col justify-center w-[800px]">
                 <h3 className="text-2xl font-bold text-destructive mb-4">
                   Before: Traditional Workflow
                 </h3>
@@ -91,12 +94,12 @@ export function BeforeAfterSlider() {
               </div>
             </div>
 
-            {/* After (Right) - Overlay with clip */}
-            <div
-              className="absolute inset-0 bg-success/10 overflow-hidden"
-              style={{ clipPath: `inset(0 0 0 ${sliderPosition}%)` }}
+            {/* After (Right) */}
+            <div 
+              className="absolute top-0 right-0 bottom-0 bg-success/10 overflow-hidden"
+              style={{ width: `${100 - sliderPosition}%` }}
             >
-              <div className="p-8 h-full flex flex-col justify-center">
+              <div className="p-8 h-full flex flex-col justify-center w-[800px]">
                 <h3 className="text-2xl font-bold text-success mb-4">
                   After: PixeSci™ Automation
                 </h3>
