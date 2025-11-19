@@ -57,13 +57,13 @@ export function BeforeAfterSlider() {
             onTouchEnd={handleMouseUp}
             data-testid="slider-container"
           >
-            {/* Before (Left) */}
-            <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50">
+            {/* Before (Left) - Base layer */}
+            <div className="absolute inset-0 bg-destructive/10">
               <div className="p-8 h-full flex flex-col justify-center">
                 <h3 className="text-2xl font-bold text-destructive mb-4">
                   Before: Traditional Workflow
                 </h3>
-                <ul className="space-y-3 text-muted-foreground">
+                <ul className="space-y-3">
                   <li className="flex items-start gap-2">
                     <X className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
                     <span>Open FlowJo, manually gate populations</span>
@@ -91,9 +91,9 @@ export function BeforeAfterSlider() {
               </div>
             </div>
 
-            {/* After (Right) */}
+            {/* After (Right) - Overlay with clip */}
             <div
-              className="absolute inset-0 bg-gradient-to-br from-success/10 to-primary/10"
+              className="absolute inset-0 bg-success/10 overflow-hidden"
               style={{ clipPath: `inset(0 0 0 ${sliderPosition}%)` }}
             >
               <div className="p-8 h-full flex flex-col justify-center">
@@ -132,7 +132,7 @@ export function BeforeAfterSlider() {
 
             {/* Slider Handle */}
             <div
-              className="absolute top-0 bottom-0 w-1 bg-primary cursor-ew-resize"
+              className="absolute top-0 bottom-0 w-1 bg-primary cursor-ew-resize z-10"
               style={{ left: `${sliderPosition}%` }}
               onMouseDown={handleMouseDown}
               onTouchStart={handleMouseDown}
