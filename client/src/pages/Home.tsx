@@ -9,7 +9,6 @@ import { WaitlistForm } from "@/components/WaitlistForm";
 import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
 import { StatsSection } from "@/components/StatsSection";
-import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { LiveDemoSimulator } from "@/components/LiveDemoSimulator";
 import { WorkflowVisualization } from "@/components/WorkflowVisualization";
 import { StickyCtaButton } from "@/components/StickyCtaButton";
@@ -22,7 +21,6 @@ export default function Home() {
       <HeroSection />
       <StatsSection />
       <ProblemSection />
-      <BeforeAfterSlider />
       <LiveDemoSimulator />
       <DemoSection />
       <WorkflowVisualization />
