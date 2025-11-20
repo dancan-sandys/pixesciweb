@@ -162,8 +162,8 @@ export function WaitlistForm() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Ready to Transform Your Research?
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+            Join    the    Waitlist
           </h2>
         </motion.div>
 
@@ -314,11 +314,11 @@ export function WaitlistForm() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-success hover:bg-success/90 text-success-foreground text-lg"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-base font-semibold"
                   disabled={mutation.isPending}
                   data-testid="button-submit-waitlist"
                 >
-                  {mutation.isPending ? "Securing Your Spot..." : "Secure My Early Access"}
+                  {mutation.isPending ? "Submitting..." : "Join the Waitlist"}
                 </Button>
 
                 <div className="text-center space-y-2">
