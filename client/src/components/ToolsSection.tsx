@@ -66,7 +66,7 @@ export function ToolsSection() {
   ];
 
   return (
-    <section className="py-24 bg-muted/20" data-testid="section-tools">
+    <section className="py-24 bg-background" data-testid="section-tools">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,23 +76,23 @@ export function ToolsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-            Integrates    with    Your    Existing    Biotech    Stack
+            Works    with    Your    Existing    Tools
           </h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            Connect FlowJo, Prism, Benchling, ImageJ, and 40+ scientific tools
+            FlowJo · Prism · Benchling · ImageJ · and 40+ more
           </p>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2">
             {allTools.map((tool, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.02 }}
-                className="px-4 py-2 bg-card rounded-md border border-card-border text-sm font-medium"
+                transition={{ duration: 0.3, delay: index * 0.01 }}
+                className="px-3 py-1.5 bg-muted/50 rounded text-sm text-muted-foreground"
                 data-testid={`tool-${tool.replace(/\s+/g, '-').toLowerCase()}`}
               >
                 {tool}

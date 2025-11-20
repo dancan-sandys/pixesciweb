@@ -31,17 +31,17 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section className="py-20 bg-muted/30" data-testid="section-faq">
+    <section className="py-24 bg-background" data-testid="section-faq">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Questions? We've Got Answers.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+            Frequently    Asked    Questions
           </h2>
         </motion.div>
 
@@ -52,18 +52,18 @@ export function FAQSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-3xl mx-auto"
         >
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-1">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card border border-card-border rounded-md px-6"
+                className="border-b border-border px-0"
                 data-testid={`faq-item-${index}`}
               >
-                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline py-6">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="text-muted-foreground pb-6">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

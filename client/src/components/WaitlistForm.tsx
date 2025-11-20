@@ -153,21 +153,21 @@ export function WaitlistForm() {
   }
 
   return (
-    <section id="waitlist-form" className="py-20 bg-background" data-testid="section-waitlist-form">
+    <section id="waitlist-form" className="py-24 bg-muted/20" data-testid="section-waitlist-form">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
             Join    the    Waitlist
           </h2>
         </motion.div>
 
-        <Card className="max-w-2xl mx-auto p-8">
+        <Card className="max-w-2xl mx-auto p-10 bg-card border border-card-border">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
