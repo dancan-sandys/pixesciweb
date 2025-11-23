@@ -21,10 +21,25 @@ export default function Admin() {
 
   const { data, isLoading, error } = useQuery<{ success: boolean; signups: WaitlistSignup[] }>({
     queryKey: ["/api/waitlist"],
-    retry: (failureCount, error: any) => {
-      if (error?.message?.includes("401")) {
+    queryFn: async () => {
+      const response = await fetch("/api/waitlist", {
+        credentials: "include",
+      });
+      
+      if (response.status === 401) {
         sessionStorage.removeItem("adminAuthenticated");
         setLocation("/utengano");
+        throw new Error("Unauthorized");
+      }
+      
+      if (!response.ok) {
+        throw new Error("Failed to fetch waitlist");
+      }
+      
+      return response.json();
+    },
+    retry: (failureCount, error: any) => {
+      if (error?.message === "Unauthorized") {
         return false;
       }
       return failureCount < 3;
@@ -33,7 +48,10 @@ export default function Admin() {
 
   const handleLogout = async () => {
     try {
-      await fetch("/api/admin/logout", { method: "POST" });
+      await fetch("/api/admin/logout", { 
+        method: "POST",
+        credentials: "include",
+      });
       sessionStorage.removeItem("adminAuthenticated");
       setLocation("/utengano");
     } catch (error) {
