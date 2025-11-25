@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 
-const AUTH_URL = "https://monkfish-app-woosd.ondigitalocean.app/";
+const AUTH_URL = "https://web.pixesci.com/";
 
 export function Header() {
   return (
