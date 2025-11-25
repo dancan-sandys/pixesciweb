@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 
-const AUTH_URL = "https://web.pixesci.com/";
-
 export function Header() {
+  const handleGetStarted = () => {
+    document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/40">
       <div className="container mx-auto px-4">
@@ -15,10 +17,10 @@ export function Header() {
           <div>
             <Button
               size="sm"
-              asChild
+              onClick={handleGetStarted}
               data-testid="button-get-started"
             >
-              <a href={AUTH_URL}>Get Started</a>
+              Get Started
             </Button>
           </div>
         </div>
