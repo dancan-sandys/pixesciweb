@@ -12,21 +12,13 @@ export function Header() {
             <span className="text-xs text-muted-foreground">™</span>
           </div>
           
-          <div className="flex items-center gap-3">
-            <Button
-              variant="ghost"
-              size="sm"
-              asChild
-              data-testid="button-sign-in"
-            >
-              <a href={AUTH_URL}>Sign in</a>
-            </Button>
+          <div>
             <Button
               size="sm"
               asChild
-              data-testid="button-sign-up"
+              data-testid="button-get-started"
             >
-              <a href={AUTH_URL}>Sign up</a>
+              <a href={AUTH_URL}>Get Started</a>
             </Button>
           </div>
         </div>
