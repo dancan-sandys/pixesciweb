@@ -33,7 +33,7 @@ export function HeroSection() {
               asChild
               data-testid="button-hero-talk-to-us"
             >
-              <a href={CALENDAR_URL} target="_blank" rel="noopener noreferrer">Talk to Us</a>
+              <a href={CALENDAR_URL} target="_blank" rel="noopener noreferrer">Get a Quick Demo</a>
             </Button>
           </div>
         </motion.div>
