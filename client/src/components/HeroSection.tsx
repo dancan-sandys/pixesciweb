@@ -5,12 +5,9 @@ import { LiveSignupCounter } from "./LiveSignupCounter";
 import frustratedImage from "@assets/generated_images/Complex_software_interface_showing_frustration_0a50718a.png";
 import happyImage from "@assets/generated_images/Scientific_AI_analysis_interface_f1e4b778.png";
 
-export function HeroSection() {
-  const handleJoinWaitlist = () => {
-    console.log("Join Waitlist clicked - scrolling to form");
-    document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" });
-  };
+const CALENDAR_URL = "https://cal.com/pixesci/30min?user=pixesci&overlayCalendar=true";
 
+export function HeroSection() {
   return (
     <section id="hero-section" className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-background">
       <div className="container mx-auto px-4">
@@ -37,10 +34,10 @@ export function HeroSection() {
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground text-base px-10 py-6 min-h-12 font-semibold"
-              onClick={handleJoinWaitlist}
+              asChild
               data-testid="button-hero-join-waitlist"
             >
-              Talk to Us
+              <a href={CALENDAR_URL} target="_blank" rel="noopener noreferrer">Talk to Us</a>
             </Button>
           </div>
           <LiveSignupCounter />
