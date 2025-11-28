@@ -21,11 +21,11 @@ const faqs = [
   },
   {
     question: "How much will it cost?",
-    answer: "Early access users get special pricing. Join the waitlist for details.",
+    answer: "Early access users get special pricing. Talk to us to learn more.",
   },
   {
     question: "When will it be available?",
-    answer: "Beta launches in Q1 2026. Waitlist members get first access.",
+    answer: "Beta launches in Q1 2026. Talk to us to get early access.",
   },
 ];
 

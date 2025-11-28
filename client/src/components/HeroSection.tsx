@@ -1,9 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Microscope, Dna, BarChart3 } from "lucide-react";
-import { LiveSignupCounter } from "./LiveSignupCounter";
-import frustratedImage from "@assets/generated_images/Complex_software_interface_showing_frustration_0a50718a.png";
-import happyImage from "@assets/generated_images/Scientific_AI_analysis_interface_f1e4b778.png";
 
 const CALENDAR_URL = "https://cal.com/pixesci/30min?user=pixesci&overlayCalendar=true";
 
@@ -30,17 +26,16 @@ export function HeroSection() {
           <p className="text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto">
             AI-powered platform that orchestrates your scientific software—FlowJo, Prism, Benchling, ImageJ—through simple natural language commands.
           </p>
-          <div className="mb-8">
+          <div>
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground text-base px-10 py-6 min-h-12 font-semibold"
               asChild
-              data-testid="button-hero-join-waitlist"
+              data-testid="button-hero-talk-to-us"
             >
               <a href={CALENDAR_URL} target="_blank" rel="noopener noreferrer">Talk to Us</a>
             </Button>
           </div>
-          <LiveSignupCounter />
         </motion.div>
       </div>
     </section>
