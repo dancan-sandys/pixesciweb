@@ -37,13 +37,6 @@ export function Header() {
             >
               <a href={CALENDAR_URL} target="_blank" rel="noopener noreferrer">Talk to Us</a>
             </Button>
-            <Button
-              size="sm"
-              asChild
-              data-testid="button-get-started"
-            >
-              <a href="https://web.pixesci.com">Get Started</a>
-            </Button>
           </div>
         </div>
       </div>

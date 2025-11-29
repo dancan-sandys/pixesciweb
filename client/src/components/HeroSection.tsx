@@ -15,7 +15,7 @@ export function HeroSection() {
         >
           <div className="mb-8">
             <span className="text-xs font-medium text-muted-foreground tracking-wider uppercase">
-              For Biotech & Pharma R&D Teams
+              For Biotech & Pharma R&D Teams and Research Labs
             </span>
           </div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
