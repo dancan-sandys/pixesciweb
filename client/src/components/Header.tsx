@@ -18,7 +18,7 @@ export function Header() {
               <span className="text-xl font-bold tracking-tight">PixeSci</span>
             </Link>
             
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="flex items-center gap-6">
               <Link 
                 href="/pricing" 
                 className={`text-sm font-medium transition-colors hover:text-foreground ${location === '/pricing' ? 'text-foreground' : 'text-muted-foreground'}`}
