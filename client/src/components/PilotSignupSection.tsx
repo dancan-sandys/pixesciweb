@@ -1,22 +1,21 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
 import { motion } from "framer-motion";
 import { Check, Sparkles } from "lucide-react";
 
 export function PilotSignupSection() {
-  const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
-    
     setIsLoading(true);
     
-    // Simulate a small delay for UX
+    // Small delay for UX - Apollo handles the actual form submission
     await new Promise(resolve => setTimeout(resolve, 500));
     
     setIsLoading(false);
@@ -45,25 +44,62 @@ export function PilotSignupSection() {
             Be among the first to experience PixeSci. Get early access, shape the product, and receive priority support.
           </p>
 
-          <Card className="p-6 md:p-8 max-w-md mx-auto">
+          <Card className="p-6 md:p-8 max-w-lg mx-auto">
             {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
+              <form onSubmit={handleSubmit} className="space-y-4 text-left">
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
                   <Input
+                    id="email"
                     type="email"
                     name="email"
-                    placeholder="Enter your work email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@company.com"
                     required
-                    className="h-12 text-base"
+                    className="h-11"
                     data-testid="input-pilot-email"
                   />
                 </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="organization">Organization</Label>
+                  <Input
+                    id="organization"
+                    type="text"
+                    name="organization"
+                    placeholder="Your company or institution"
+                    required
+                    className="h-11"
+                    data-testid="input-pilot-organization"
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="software">What Scientific Software Do You Use In Your Day To Day?</Label>
+                  <Textarea
+                    id="software"
+                    name="software"
+                    placeholder="e.g., FlowJo, Prism, Benchling, ImageJ, Schrödinger..."
+                    className="min-h-[80px] resize-none"
+                    data-testid="input-pilot-software"
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="website">Organisation Website</Label>
+                  <Input
+                    id="website"
+                    type="url"
+                    name="website"
+                    placeholder="https://yourcompany.com"
+                    className="h-11"
+                    data-testid="input-pilot-website"
+                  />
+                </div>
+
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full"
+                  className="w-full mt-6"
                   disabled={isLoading}
                   data-testid="button-pilot-submit"
                 >
@@ -73,7 +109,7 @@ export function PilotSignupSection() {
                     "Request Early Access"
                   )}
                 </Button>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground text-center">
                   No spam. We'll only reach out about the pilot program.
                 </p>
               </form>
