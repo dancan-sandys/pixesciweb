@@ -1,9 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
-const CALENDAR_URL = "https://cal.com/pixesci/30min?user=pixesci&overlayCalendar=true";
-
 export function HeroSection() {
+  const scrollToPilotForm = () => {
+    const pilotSection = document.querySelector('[data-testid="pilot-signup-section"]');
+    if (pilotSection) {
+      pilotSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="hero-section" className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-background">
       <div className="container mx-auto px-4">
@@ -30,10 +35,10 @@ export function HeroSection() {
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground text-base px-10 py-6 min-h-12 font-semibold"
-              asChild
-              data-testid="button-hero-talk-to-us"
+              onClick={scrollToPilotForm}
+              data-testid="button-hero-early-access"
             >
-              <a href={CALENDAR_URL} target="_blank" rel="noopener noreferrer">Request Early Access</a>
+              Request Early Access
             </Button>
           </div>
         </motion.div>
