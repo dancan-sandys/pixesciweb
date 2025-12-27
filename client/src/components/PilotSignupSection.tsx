@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,17 +9,14 @@ import { Check, Sparkles } from "lucide-react";
 
 export function PilotSignupSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    
-    // Small delay for UX - Apollo handles the actual form submission
-    await new Promise(resolve => setTimeout(resolve, 500));
-    
-    setIsLoading(false);
-    setIsSubmitted(true);
+  const handleSubmit = () => {
+    // Show success message after form submits
+    // Apollo intercepts the native form submission
+    setTimeout(() => {
+      setIsSubmitted(true);
+    }, 100);
   };
 
   return (
@@ -46,7 +43,13 @@ export function PilotSignupSection() {
 
           <Card className="p-6 md:p-8 max-w-lg mx-auto">
             {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="space-y-4 text-left">
+              <form 
+                ref={formRef}
+                action="#" 
+                method="POST"
+                onSubmit={handleSubmit}
+                className="space-y-4 text-left"
+              >
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
                   <Input
@@ -61,35 +64,35 @@ export function PilotSignupSection() {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="organization">Organization</Label>
+                  <Label htmlFor="name">Organization</Label>
                   <Input
-                    id="organization"
+                    id="name"
                     type="text"
-                    name="organization"
+                    name="name"
                     placeholder="Your company or institution"
                     required
                     className="h-11"
-                    data-testid="input-pilot-organization"
+                    data-testid="input-pilot-name"
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="software">What Scientific Software Do You Use In Your Day To Day?</Label>
+                  <Label htmlFor="functions">What Scientific Software Do You Use In Your Day To Day?</Label>
                   <Textarea
-                    id="software"
-                    name="software"
+                    id="functions"
+                    name="functions"
                     placeholder="e.g., FlowJo, Prism, Benchling, ImageJ, Schrödinger..."
                     className="min-h-[80px] resize-none"
-                    data-testid="input-pilot-software"
+                    data-testid="input-pilot-functions"
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="website">Organisation Website</Label>
+                  <Label htmlFor="website_url">Organisation Website</Label>
                   <Input
-                    id="website"
+                    id="website_url"
                     type="url"
-                    name="website"
+                    name="website_url"
                     placeholder="https://yourcompany.com"
                     className="h-11"
                     data-testid="input-pilot-website"
@@ -100,14 +103,9 @@ export function PilotSignupSection() {
                   type="submit"
                   size="lg"
                   className="w-full mt-6"
-                  disabled={isLoading}
                   data-testid="button-pilot-submit"
                 >
-                  {isLoading ? (
-                    <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                  ) : (
-                    "Request Early Access"
-                  )}
+                  Request Early Access
                 </Button>
                 <p className="text-xs text-muted-foreground text-center">
                   No spam. We'll only reach out about the pilot program.
