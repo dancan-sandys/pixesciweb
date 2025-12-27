@@ -47,12 +47,15 @@ export async function submitToApollo(data: {
       body: JSON.stringify(contact),
     });
 
+    const responseData = await response.text();
+    console.log('[Apollo] Response status:', response.status);
+    console.log('[Apollo] Response body:', responseData);
+    
     if (response.ok) {
       console.log('[Apollo] Contact created successfully');
       return true;
     } else {
-      const errorData = await response.text();
-      console.error('[Apollo] Failed to create contact:', response.status, errorData);
+      console.error('[Apollo] Failed to create contact:', response.status, responseData);
       return false;
     }
   } catch (error) {
