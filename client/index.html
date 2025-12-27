@@ -12,7 +12,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,o.onload=function(){window.trackingFunctions.onLoad({appId:"694ef77a3dccdd001cf4d118"})},document.head.appendChild(o)}initApollo();</script>
+    <script>
+      // Apollo website tracking
+      function initApollo(){
+        var n=Math.random().toString(36).substring(7);
+        var o=document.createElement("script");
+        o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n;
+        o.async=true;
+        o.defer=true;
+        o.onload=function(){
+          window.trackingFunctions.onLoad({appId:"694ef77a3dccdd001cf4d118"});
+        };
+        document.head.appendChild(o);
+      }
+      initApollo();
+      
+      // Apollo form enrichment - loaded after page is ready to prevent blocking
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.src = 'https://assets.apollo.io/js/apollo-inbound.js?nocache=' + Math.random().toString(36).substring(7);
+          script.async = true;
+          script.onload = function() {
+            try {
+              if (window.ApolloInbound && window.ApolloInbound.formEnrichment) {
+                window.ApolloInbound.formEnrichment.init({
+                  appId: '694effe4fec5bd00198f8497',
+                  preHideStyle: false
+                });
+              }
+            } catch (e) {
+              console.log('[Apollo] Form enrichment not available');
+            }
+          };
+          document.body.appendChild(script);
+        }, 2000);
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
