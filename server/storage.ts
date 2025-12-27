@@ -45,10 +45,8 @@ class MemStorage implements IStorage {
       id,
       email: insertSignup.email,
       name: insertSignup.name,
-      institution: insertSignup.institution ?? null,
-      researchArea: insertSignup.researchArea,
-      software: insertSignup.software,
-      challenge: insertSignup.challenge ?? null,
+      software: insertSignup.software ?? null,
+      websiteUrl: insertSignup.websiteUrl ?? null,
       createdAt: new Date(),
     };
     this.waitlistSignups.set(id, signup);

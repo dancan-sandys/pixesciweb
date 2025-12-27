@@ -1,21 +1,47 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { motion } from "framer-motion";
-import { Check, Sparkles } from "lucide-react";
+import { Check, Sparkles, Loader2 } from "lucide-react";
 
 export function PilotSignupSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Apollo tracks the form data automatically
-    // Show success message
-    setIsSubmitted(true);
+    setIsLoading(true);
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      email: formData.get("email") as string,
+      name: formData.get("name") as string,
+      software: formData.get("functions") as string || null,
+      websiteUrl: formData.get("website_url") as string || null,
+    };
+
+    try {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Network error. Please check your connection.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -43,7 +69,6 @@ export function PilotSignupSection() {
           <Card className="p-6 md:p-8 max-w-lg mx-auto">
             {!isSubmitted ? (
               <form 
-                ref={formRef}
                 onSubmit={handleSubmit}
                 className="space-y-4 text-left"
               >
@@ -96,13 +121,25 @@ export function PilotSignupSection() {
                   />
                 </div>
 
+                {error && (
+                  <p className="text-sm text-destructive text-center">{error}</p>
+                )}
+
                 <Button
                   type="submit"
                   size="lg"
                   className="w-full mt-6"
+                  disabled={isLoading}
                   data-testid="button-pilot-submit"
                 >
-                  Request Early Access
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    "Request Early Access"
+                  )}
                 </Button>
                 <p className="text-xs text-muted-foreground text-center">
                   No spam. We'll only reach out about the pilot program.

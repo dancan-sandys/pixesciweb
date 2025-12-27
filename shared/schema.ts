@@ -21,10 +21,8 @@ export const waitlistSignups = pgTable("waitlist_signups", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   email: text("email").notNull(),
   name: text("name").notNull(),
-  institution: text("institution"),
-  researchArea: text("research_area").notNull(),
-  software: text("software").array().notNull(),
-  challenge: text("challenge"),
+  software: text("software"),
+  websiteUrl: text("website_url"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
