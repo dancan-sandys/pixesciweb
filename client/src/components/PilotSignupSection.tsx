@@ -1,49 +1,7 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
 import { motion } from "framer-motion";
-import { Check, Sparkles, Loader2 } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 
 export function PilotSignupSection() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setError(null);
-
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      email: formData.get("email") as string,
-      name: formData.get("name") as string,
-      software: (formData.get("functions") as string) || null,
-      websiteUrl: (formData.get("website_url") as string) || null,
-    };
-
-    try {
-      const response = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        setIsSubmitted(true);
-      } else {
-        setError("Something went wrong. Please try again.");
-      }
-    } catch {
-      setError("Network error. Please check your connection.");
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   return (
     <section className="py-24 bg-muted/30" data-testid="pilot-signup-section">
       <div className="container mx-auto px-4">
@@ -52,7 +10,7 @@ export function PilotSignupSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto text-center"
+          className="max-w-3xl mx-auto text-center"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             <Sparkles className="w-4 h-4" />
@@ -66,101 +24,21 @@ export function PilotSignupSection() {
             Be among the first to experience PixeSci. Get early access, shape the product, and receive priority support.
           </p>
 
-          <Card className="p-6 md:p-8 max-w-lg mx-auto">
-            {!isSubmitted ? (
-              <form 
-                onSubmit={handleSubmit}
-                className="space-y-4 text-left"
-              >
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    name="email"
-                    placeholder="you@company.com"
-                    required
-                    className="h-11"
-                    data-testid="input-pilot-email"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="name">Organization</Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    name="name"
-                    placeholder="Your company or institution"
-                    required
-                    className="h-11"
-                    data-testid="input-pilot-name"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="functions">What Scientific Software Do You Use In Your Day To Day?</Label>
-                  <Textarea
-                    id="functions"
-                    name="functions"
-                    placeholder="e.g., FlowJo, Prism, Benchling, ImageJ, Schrödinger..."
-                    className="min-h-[80px] resize-none"
-                    data-testid="input-pilot-functions"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="website_url">Organisation Website</Label>
-                  <Input
-                    id="website_url"
-                    type="url"
-                    name="website_url"
-                    placeholder="https://yourcompany.com"
-                    className="h-11"
-                    data-testid="input-pilot-website"
-                  />
-                </div>
-
-                {error && (
-                  <p className="text-sm text-destructive text-center">{error}</p>
-                )}
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full mt-6"
-                  disabled={isLoading}
-                  data-testid="button-pilot-submit"
-                >
-                  {isLoading ? (
-                    <>
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Submitting...
-                    </>
-                  ) : (
-                    "Request Early Access"
-                  )}
-                </Button>
-                <p className="text-xs text-muted-foreground text-center">
-                  No spam. We'll only reach out about the pilot program.
-                </p>
-              </form>
-            ) : (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="text-center py-4"
-              >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Check className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">You're on the list!</h3>
-                <p className="text-sm text-muted-foreground">
-                  We'll be in touch soon with next steps for the pilot program.
-                </p>
-              </motion.div>
-            )}
-          </Card>
+          <div 
+            className="w-full rounded-lg overflow-hidden"
+            style={{ height: '500px' }}
+            data-testid="typeform-embed"
+          >
+            <iframe
+              src="https://form.typeform.com/to/k7NQu5WS"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allow="camera; microphone; autoplay; encrypted-media;"
+              style={{ border: 'none' }}
+              title="PixeSci Pilot Program Signup"
+            />
+          </div>
 
           <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
