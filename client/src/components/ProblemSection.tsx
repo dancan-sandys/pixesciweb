@@ -4,28 +4,28 @@ import { MousePointer, BookOpen, Clock, DollarSign, RefreshCcw, TrendingDown, Ta
 const painPoints = [
   {
     icon: MousePointer,
-    title: "Switching between FlowJo, Prism, and Excel just to create one graph",
-    description: "Manual data transfer wastes hours every week",
+    title: "\"I spend more time copying data between FlowJo and Prism than analyzing it.\"",
+    description: "You shouldn't need 5 tools open just to make one figure.",
   },
   {
     icon: BookOpen,
-    title: "Training new lab members on 10+ different software packages",
-    description: "Onboarding takes months, not days",
+    title: "\"It takes months to train new lab members on all our software.\"",
+    description: "Your postdocs should be doing science, not software tutorials.",
   },
   {
     icon: Clock,
-    title: "Spending days manually moving data between Benchling and ImageJ",
-    description: "Tedious copy-paste workflows prone to errors",
+    title: "\"I'm manually moving data between Benchling and ImageJ every single day.\"",
+    description: "You keep thinking 'there has to be a better way.' There is.",
   },
   {
     icon: DollarSign,
-    title: "Expensive tools like Imaris and Schrödinger barely used",
-    description: "High licensing costs, low utilization",
+    title: "\"We pay thousands for Imaris but barely use half its features.\"",
+    description: "Your expensive tools should work for you, not collect dust.",
   },
   {
     icon: RefreshCcw,
-    title: "Repeating the same 20-click workflow every single day",
-    description: "Repetitive tasks that could be automated",
+    title: "\"I do the same 20-click workflow every morning before I can start real work.\"",
+    description: "Your routine tasks should run themselves.",
   },
 ];
 
@@ -68,10 +68,10 @@ export function ProblemSection() {
             The Problem
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-            What's Getting in Your Way?
+            Does This Sound Like Your Day?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Researchers spend up to 40% of their time on software tasks instead of science
+            You didn't get a PhD to fight with software. Here's what we hear from researchers like you.
           </p>
         </motion.div>
 
