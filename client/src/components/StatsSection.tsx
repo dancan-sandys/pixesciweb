@@ -10,7 +10,7 @@ interface Stat {
 
 const stats: Stat[] = [
   { value: 50, suffix: "+", label: "Scientific Tools", description: "Integrated platforms from FlowJo to Seurat" },
-  { value: 90, suffix: "%", label: "Time Saved", description: "On repetitive analysis workflows" },
+  { value: 60, suffix: "%", label: "Time Saved", description: "On repetitive analysis workflows" },
   { value: 10, suffix: "x", label: "Faster", description: "Than manual data processing" },
 ];
 
@@ -56,7 +56,7 @@ export function StatsSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-12 md:gap-20 max-w-4xl mx-auto"
         >
           {stats.map((stat, index) => (
             <motion.div
