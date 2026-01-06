@@ -2,9 +2,14 @@
 
 ## Overview
 
-PixeSci is a marketing-focused single-page application designed to capture user interest and waitlist signups for an AI-powered platform that automates scientific software through natural language commands. The application primarily targets biotech and pharma researchers (R&D scientists, bioinformatics leads) with secondary focus on academic researchers (PhD students, postdocs, lab managers) who struggle with complex scientific software interfaces.
+PixeSci is a marketing-focused single-page application designed to capture user signups for an AI-powered platform that automates scientific software through natural language commands. The application primarily targets biotech and pharma researchers (R&D scientists, bioinformatics leads) with secondary focus on academic researchers (PhD students, postdocs, lab managers) who struggle with complex scientific software interfaces.
 
-The landing page showcases the product's value proposition through multiple sections: hero, problem statement, interactive demo, tool integration showcase, user stories, features, early access benefits, waitlist form, FAQs, and footer. The primary conversion goal is waitlist signup collection.
+The landing page showcases the product's value proposition through multiple sections: hero, problem statement, interactive demo, tool integration showcase, user stories, features, signup form (Typeform embed), FAQs, and footer. The primary conversion goal is account signups.
+
+**Security & Compliance:**
+- HIPAA Compliant
+- SOC 2 Certified
+- Enterprise ready
 
 **Key Messaging Updates (Latest):**
 - **Multi-tool orchestration focus:** Positioned as "scientific brain" that connects FlowJo → Benchling → Prism → ImageJ workflows

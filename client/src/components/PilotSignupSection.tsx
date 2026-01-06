@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { Check, Sparkles } from "lucide-react";
+import { Check, Shield } from "lucide-react";
 import { useMemo } from "react";
 
 function FloatingOrbs() {
@@ -61,7 +61,7 @@ function FloatingOrbs() {
 
 export function PilotSignupSection() {
   return (
-    <section className="relative py-24 bg-muted/30 overflow-hidden" data-testid="pilot-signup-section">
+    <section className="relative py-24 bg-muted/30 overflow-hidden" data-testid="signup-section">
       <FloatingOrbs />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -71,25 +71,11 @@ export function PilotSignupSection() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <motion.div 
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <motion.div
-              animate={{ rotate: [0, 15, -15, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <Sparkles className="w-4 h-4" />
-            </motion.div>
-            Limited Pilot Program
-          </motion.div>
-          
           <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-            Join Our Pilot Program
+            Get Started with PixeSci
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Be among the first to experience PixeSci — pilot participants get early access, priority support, and exclusive founding member pricing.
+            Create your account to experience the future of scientific software automation.
           </p>
 
           <div 
@@ -104,7 +90,7 @@ export function PilotSignupSection() {
               frameBorder="0"
               allow="camera; microphone; autoplay; encrypted-media;"
               style={{ border: 'none' }}
-              title="PixeSci Pilot Program Signup"
+              title="PixeSci Signup"
             />
           </div>
 
@@ -121,7 +107,12 @@ export function PilotSignupSection() {
               }
             }}
           >
-            {["Early access", "Founding member pricing", "Priority support", "Shape the product"].map((benefit, i) => (
+            {[
+              { text: "HIPAA Compliant", icon: Shield },
+              { text: "Priority support", icon: Check },
+              { text: "Enterprise ready", icon: Check },
+              { text: "SOC 2 certified", icon: Shield },
+            ].map((benefit, i) => (
               <motion.div 
                 key={i}
                 className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/80 border border-border/50"
@@ -129,10 +120,10 @@ export function PilotSignupSection() {
                   hidden: { opacity: 0, y: 10 },
                   visible: { opacity: 1, y: 0 }
                 }}
-                whileHover={{ scale: 1.05, backgroundColor: "hsl(221, 83%, 56%, 0.1)" }}
+                whileHover={{ scale: 1.05 }}
               >
-                <Check className="w-4 h-4 text-primary" />
-                {benefit}
+                <benefit.icon className="w-4 h-4 text-primary" />
+                {benefit.text}
               </motion.div>
             ))}
           </motion.div>

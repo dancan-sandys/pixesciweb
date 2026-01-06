@@ -102,10 +102,10 @@ function AnimatedGradient() {
 }
 
 export function HeroSection() {
-  const scrollToPilotForm = () => {
-    const pilotSection = document.querySelector('[data-testid="pilot-signup-section"]');
-    if (pilotSection) {
-      pilotSection.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSignupForm = () => {
+    const signupSection = document.querySelector('[data-testid="signup-section"]');
+    if (signupSection) {
+      signupSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -141,7 +141,7 @@ export function HeroSection() {
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground text-base px-8 py-6 min-h-12 font-semibold"
-              onClick={scrollToPilotForm}
+              onClick={scrollToSignupForm}
               data-testid="button-hero-create-account"
             >
               Create an account
