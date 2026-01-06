@@ -1,5 +1,13 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useMemo } from "react";
+import { Rocket, Shield, Clock, Users } from "lucide-react";
+
+const benefits = [
+  { icon: Clock, text: "Get early access before public launch" },
+  { icon: Shield, text: "Priority onboarding and support" },
+  { icon: Users, text: "Join 500+ researchers on the waitlist" },
+  { icon: Rocket, text: "Shape the product with your feedback" },
+];
 
 function FloatingOrbs() {
   const prefersReducedMotion = useReducedMotion();
@@ -60,7 +68,7 @@ function FloatingOrbs() {
 
 export function PilotSignupSection() {
   return (
-    <section className="relative py-24 bg-muted/30 overflow-hidden" data-testid="signup-section">
+    <section className="relative py-24 bg-muted/30 overflow-hidden" data-testid="signup-section" id="signup-section">
       <FloatingOrbs />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -68,31 +76,75 @@ export function PilotSignupSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-center"
+          className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-            Get Started with PixeSci
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Create your account to experience the future of scientific software automation.
-          </p>
-
-          <div 
-            className="w-full rounded-lg overflow-hidden"
-            style={{ height: '500px' }}
-            data-testid="typeform-embed"
-          >
-            <iframe
-              src="https://form.typeform.com/to/k7NQu5WS"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              allow="camera; microphone; autoplay; encrypted-media;"
-              style={{ border: 'none' }}
-              title="PixeSci Signup"
-            />
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-medium text-primary mb-4">
+              <Rocket className="w-3.5 h-3.5" />
+              Early Access
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+              Get Started with PixeSci
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Create your account to experience the future of scientific software automation.
+            </p>
           </div>
 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10"
+          >
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center p-4 rounded-lg bg-background/50 border border-border/50"
+              >
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                  <benefit.icon className="w-5 h-5 text-primary" />
+                </div>
+                <span className="text-xs text-muted-foreground">{benefit.text}</span>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="bg-card rounded-xl border border-border overflow-hidden shadow-lg"
+          >
+            <div 
+              className="w-full"
+              style={{ height: '520px' }}
+              data-testid="typeform-embed"
+            >
+              <iframe
+                src="https://form.typeform.com/to/k7NQu5WS"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allow="camera; microphone; autoplay; encrypted-media;"
+                style={{ border: 'none' }}
+                title="PixeSci Signup"
+              />
+            </div>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="text-center text-xs text-muted-foreground mt-6"
+          >
+            By signing up, you agree to our Terms of Service and Privacy Policy.
+            We'll never share your information with third parties.
+          </motion.p>
         </motion.div>
       </div>
     </section>
