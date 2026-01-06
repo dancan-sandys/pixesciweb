@@ -21,7 +21,8 @@ export default function Home() {
       <InteractiveDemo />
       <FeaturesSection />
       <ToolsSection />
-      <TestimonialsSection />
+      {/* TestimonialsSection hidden until real user feedback is collected */}
+      {/* <TestimonialsSection /> */}
       <PilotSignupSection />
       <FAQSection />
       <Footer />
