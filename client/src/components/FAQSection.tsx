@@ -62,7 +62,7 @@ const itemVariants = {
 
 export function FAQSection() {
   return (
-    <section className="py-24 bg-background" data-testid="section-faq" id="section-faq">
+    <section className="py-24 bg-background border-t border-border/50" data-testid="section-faq" id="section-faq">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

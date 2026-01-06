@@ -86,7 +86,7 @@ export function ToolsSection() {
   };
 
   return (
-    <section className="py-24 bg-muted/30" data-testid="section-tools">
+    <section className="py-24 bg-muted/30 border-t border-border/50" data-testid="section-tools">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

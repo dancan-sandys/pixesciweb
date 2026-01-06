@@ -60,7 +60,7 @@ function FloatingOrbs() {
 
 export function PilotSignupSection() {
   return (
-    <section className="relative py-24 bg-muted/30 overflow-hidden" data-testid="signup-section" id="signup-section">
+    <section className="relative py-24 bg-muted/30 overflow-hidden border-t border-border/50" data-testid="signup-section" id="signup-section">
       <FloatingOrbs />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
