@@ -1,13 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useMemo } from "react";
-import { Rocket, Shield, Clock, Users } from "lucide-react";
-
-const benefits = [
-  { icon: Clock, text: "Get early access before public launch" },
-  { icon: Shield, text: "Priority onboarding and support" },
-  { icon: Users, text: "Join 500+ researchers on the waitlist" },
-  { icon: Rocket, text: "Shape the product with your feedback" },
-];
+import { Rocket } from "lucide-react";
 
 function FloatingOrbs() {
   const prefersReducedMotion = useReducedMotion();
@@ -90,26 +83,6 @@ export function PilotSignupSection() {
               Create your account to experience the future of scientific software automation.
             </p>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10"
-          >
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center text-center p-4 rounded-lg bg-background/50 border border-border/50"
-              >
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
-                  <benefit.icon className="w-5 h-5 text-primary" />
-                </div>
-                <span className="text-xs text-muted-foreground">{benefit.text}</span>
-              </div>
-            ))}
-          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
