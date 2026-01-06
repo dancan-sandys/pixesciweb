@@ -25,6 +25,30 @@ const features = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+    },
+  },
+};
+
 export function FeaturesSection() {
   return (
     <section className="py-24 bg-background" data-testid="section-features">
@@ -41,28 +65,38 @@ export function FeaturesSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
+        >
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col items-start gap-4"
+              variants={itemVariants}
+              whileHover={{ 
+                scale: 1.02,
+                transition: { duration: 0.2 }
+              }}
+              className="group relative p-6 rounded-xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <feature.icon className="w-7 h-7 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+              <motion.div 
+                className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mb-4"
+                whileHover={{ rotate: [0, -5, 5, 0] }}
+                transition={{ duration: 0.5 }}
+              >
+                <feature.icon className="w-7 h-7 text-primary group-hover:scale-110 transition-transform duration-300" />
+              </motion.div>
+              <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {feature.description}
+              </p>
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

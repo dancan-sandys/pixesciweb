@@ -25,9 +25,32 @@ const painPoints = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+    },
+  },
+};
+
 export function ProblemSection() {
   return (
-    <section className="py-24 bg-muted/30" data-testid="section-problem">
+    <section className="py-24 bg-background" data-testid="section-problem">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,25 +64,35 @@ export function ProblemSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto"
+        >
           {painPoints.map((point, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex items-start gap-4"
+              variants={itemVariants}
+              whileHover={{ 
+                x: 8,
+                transition: { duration: 0.2 }
+              }}
+              className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors duration-200 cursor-default"
             >
-              <div className="flex-shrink-0 w-6 h-6 rounded-full border-2 border-muted-foreground/30 flex items-center justify-center mt-1">
-                <div className="w-2 h-2 bg-muted-foreground/50 rounded-full" />
-              </div>
-              <p className="text-base text-foreground leading-relaxed">
+              <motion.div 
+                className="flex-shrink-0 w-10 h-10 rounded-lg bg-destructive/10 flex items-center justify-center mt-0.5"
+                whileHover={{ scale: 1.1, rotate: -5 }}
+              >
+                <point.icon className="w-5 h-5 text-destructive/70 group-hover:text-destructive transition-colors duration-200" />
+              </motion.div>
+              <p className="text-base text-foreground leading-relaxed group-hover:text-foreground/90">
                 {point.title}
               </p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

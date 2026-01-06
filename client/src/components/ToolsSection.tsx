@@ -58,6 +58,30 @@ const toolCategories = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.03,
+    },
+  },
+};
+
+const toolVariants = {
+  hidden: { opacity: 0, scale: 0.8, y: 20 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 200,
+      damping: 20,
+    },
+  },
+};
+
 export function ToolsSection() {
   const allTools = [
     "FlowJo", "Prism", "Benchling", "ImageJ", "SnapGene", "CellProfiler",
@@ -66,7 +90,7 @@ export function ToolsSection() {
   ];
 
   return (
-    <section className="py-24 bg-background" data-testid="section-tools">
+    <section className="py-24 bg-muted/30" data-testid="section-tools">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -84,21 +108,28 @@ export function ToolsSection() {
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="flex flex-wrap justify-center gap-2">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="flex flex-wrap justify-center gap-3"
+          >
             {allTools.map((tool, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.01 }}
-                className="px-3 py-1.5 bg-muted/50 rounded text-sm text-muted-foreground"
+                variants={toolVariants}
+                whileHover={{ 
+                  scale: 1.1,
+                  transition: { duration: 0.2 }
+                }}
+                className="px-4 py-2 bg-background border border-border/50 rounded-lg text-sm text-muted-foreground cursor-default shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200"
                 data-testid={`tool-${tool.replace(/\s+/g, '-').toLowerCase()}`}
               >
                 {tool}
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

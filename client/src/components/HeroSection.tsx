@@ -1,7 +1,105 @@
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useMemo } from "react";
 
 const CALENDAR_URL = "https://cal.com/pixesci/30min?user=pixesci&overlayCalendar=true";
+
+function FloatingParticles() {
+  const prefersReducedMotion = useReducedMotion();
+  
+  const particles = useMemo(() => 
+    Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      size: 2 + (i % 5),
+      x: (i * 5) % 100,
+      y: (i * 7) % 100,
+      duration: 15 + (i % 10),
+      delay: i * 0.25,
+    })), []
+  );
+
+  if (prefersReducedMotion) {
+    return (
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {particles.map((particle) => (
+          <div
+            key={particle.id}
+            className="absolute rounded-full bg-primary/20"
+            style={{
+              width: particle.size,
+              height: particle.size,
+              left: `${particle.x}%`,
+              top: `${particle.y}%`,
+              opacity: 0.3,
+            }}
+          />
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {particles.map((particle) => (
+        <motion.div
+          key={particle.id}
+          className="absolute rounded-full bg-primary/20"
+          style={{
+            width: particle.size,
+            height: particle.size,
+            left: `${particle.x}%`,
+            top: `${particle.y}%`,
+          }}
+          animate={{
+            y: [0, -30, 0],
+            x: [0, 15, -15, 0],
+            opacity: [0.2, 0.5, 0.2],
+          }}
+          transition={{
+            duration: particle.duration,
+            repeat: Infinity,
+            delay: particle.delay,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function AnimatedGradient() {
+  const prefersReducedMotion = useReducedMotion();
+  
+  if (prefersReducedMotion) {
+    return (
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-30"
+        style={{
+          background: "radial-gradient(circle at 50% 50%, hsl(221 83% 56% / 0.15) 0%, transparent 50%)",
+        }}
+      />
+    );
+  }
+  
+  return (
+    <motion.div
+      className="absolute inset-0 pointer-events-none opacity-30"
+      animate={{
+        background: [
+          "radial-gradient(circle at 20% 50%, hsl(221 83% 56% / 0.15) 0%, transparent 50%)",
+          "radial-gradient(circle at 80% 50%, hsl(221 83% 56% / 0.15) 0%, transparent 50%)",
+          "radial-gradient(circle at 50% 80%, hsl(221 83% 56% / 0.15) 0%, transparent 50%)",
+          "radial-gradient(circle at 20% 50%, hsl(221 83% 56% / 0.15) 0%, transparent 50%)",
+        ],
+      }}
+      transition={{
+        duration: 10,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    />
+  );
+}
 
 export function HeroSection() {
   const scrollToPilotForm = () => {
@@ -16,7 +114,9 @@ export function HeroSection() {
   };
 
   return (
-    <section id="hero-section" className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-background">
+    <section id="hero-section" className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-background overflow-hidden">
+      <FloatingParticles />
+      <AnimatedGradient />
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

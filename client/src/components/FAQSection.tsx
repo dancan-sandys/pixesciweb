@@ -29,6 +29,29 @@ const faqs = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+    },
+  },
+};
+
 export function FAQSection() {
   return (
     <section className="py-24 bg-background" data-testid="section-faq">
@@ -46,27 +69,28 @@ export function FAQSection() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
           className="max-w-3xl mx-auto"
         >
-          <Accordion type="single" collapsible className="space-y-1">
+          <Accordion type="single" collapsible className="space-y-2">
             {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="border-b border-border px-0"
-                data-testid={`faq-item-${index}`}
-              >
-                <AccordionTrigger className="text-left font-semibold hover:no-underline py-6">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-6">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+              <motion.div key={index} variants={itemVariants}>
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="border border-border/50 rounded-lg px-4 data-[state=open]:bg-muted/30 transition-colors duration-200"
+                  data-testid={`faq-item-${index}`}
+                >
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline py-5 hover:text-primary transition-colors duration-200">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-5">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
             ))}
           </Accordion>
         </motion.div>
