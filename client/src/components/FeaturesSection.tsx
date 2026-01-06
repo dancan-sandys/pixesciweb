@@ -75,10 +75,6 @@ export function FeaturesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-success/10 border border-success/20 text-xs font-medium text-success mb-4">
-            <Zap className="w-3.5 h-3.5" />
-            Features
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
             Built for How Scientists Actually Work
           </h2>

@@ -71,10 +71,6 @@ export function FAQSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-info/10 border border-info/20 text-xs font-medium text-info mb-4">
-            <HelpCircle className="w-3.5 h-3.5" />
-            FAQ
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
             Frequently Asked Questions
           </h2>

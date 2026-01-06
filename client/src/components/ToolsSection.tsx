@@ -95,10 +95,6 @@ export function ToolsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-xs font-medium text-secondary mb-4">
-            <Layers className="w-3.5 h-3.5" />
-            Integrations
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
             Works With Your Existing Tools
           </h2>
