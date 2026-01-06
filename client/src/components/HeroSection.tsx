@@ -1,12 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
+const CALENDAR_URL = "https://cal.com/pixesci/30min?user=pixesci&overlayCalendar=true";
+
 export function HeroSection() {
   const scrollToPilotForm = () => {
     const pilotSection = document.querySelector('[data-testid="pilot-signup-section"]');
     if (pilotSection) {
       pilotSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const openCalendar = () => {
+    window.open(CALENDAR_URL, '_blank');
   };
 
   return (
@@ -31,14 +37,23 @@ export function HeroSection() {
           <p className="text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto">
             PixeSci is an AI-powered automation layer that helps researchers orchestrate complex imaging and analysis workflows across existing scientific software ecosystems.
           </p>
-          <div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground text-base px-10 py-6 min-h-12 font-semibold"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground text-base px-8 py-6 min-h-12 font-semibold"
               onClick={scrollToPilotForm}
-              data-testid="button-hero-early-access"
+              data-testid="button-hero-create-account"
             >
-              Request Early Access
+              Create an account
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-base px-8 py-6 min-h-12 font-semibold"
+              onClick={openCalendar}
+              data-testid="button-hero-get-demo"
+            >
+              Get a demo
             </Button>
           </div>
         </motion.div>
