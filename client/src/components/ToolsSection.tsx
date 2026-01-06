@@ -211,7 +211,12 @@ export function ToolsSection() {
           </p>
           <Button
             variant="outline"
-            onClick={() => window.open('mailto:hello@pixesci.com?subject=Tool%20Integration%20Request', '_blank')}
+            onClick={() => {
+              const signupSection = document.querySelector('[data-testid="signup-section"]');
+              if (signupSection) {
+                signupSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
             data-testid="button-request-integration"
           >
             Request an integration
