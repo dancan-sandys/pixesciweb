@@ -1,5 +1,4 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { Check, Shield } from "lucide-react";
 import { useMemo } from "react";
 
 function FloatingOrbs() {
@@ -94,39 +93,6 @@ export function PilotSignupSection() {
             />
           </div>
 
-          <motion.div 
-            className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-muted-foreground"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.1, delayChildren: 0.3 }
-              }
-            }}
-          >
-            {[
-              { text: "HIPAA Compliant", icon: Shield },
-              { text: "Priority support", icon: Check },
-              { text: "Enterprise ready", icon: Check },
-              { text: "SOC 2 certified", icon: Shield },
-            ].map((benefit, i) => (
-              <motion.div 
-                key={i}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/80 border border-border/50"
-                variants={{
-                  hidden: { opacity: 0, y: 10 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <benefit.icon className="w-4 h-4 text-primary" />
-                {benefit.text}
-              </motion.div>
-            ))}
-          </motion.div>
         </motion.div>
       </div>
     </section>
