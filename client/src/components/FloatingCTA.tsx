@@ -62,7 +62,6 @@ export function FloatingCTA() {
             className="shadow-lg rounded-full px-6 group"
             data-testid="button-floating-cta"
           >
-            <Sparkles className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
             Get Early Access
           </Button>
         </motion.div>
