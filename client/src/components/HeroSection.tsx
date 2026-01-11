@@ -190,7 +190,7 @@ function TerminalPreview() {
           <div className="w-3 h-3 rounded-full bg-success/60" />
           <span className="ml-3 text-xs text-muted-foreground font-mono">PixeSci Terminal</span>
         </div>
-        <div className="p-4 font-mono text-sm min-h-[160px] bg-background/50">
+        <div className="p-4 font-mono text-sm h-[200px] bg-background/50 overflow-y-auto">
           {steps.slice(0, Math.min(step + 1, steps.length)).map((s, i) => (
             <motion.div
               key={i}
