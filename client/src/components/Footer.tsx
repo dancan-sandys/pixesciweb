@@ -139,7 +139,7 @@ export function Footer() {
             <span className="hidden sm:inline text-border">|</span>
             <span className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
-              San Francisco, CA
+              New York, NY
             </span>
           </div>
           <p className="text-xs text-muted-foreground">
