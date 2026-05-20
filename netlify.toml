@@ -1,6 +1,6 @@
 [build]
-  # Build command for the frontend
-  command = "npm run build"
+  # Build command for the frontend only (skip backend build)
+  command = "npm run build:frontend"
   # Publish the frontend static files
   publish = "dist/public"
 
