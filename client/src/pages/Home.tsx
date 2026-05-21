@@ -25,7 +25,8 @@ export default function Home() {
       <ProblemSection />
       <InteractiveDemo />
       <FeaturesSection />
-      <RegulatoryBenefitsSection />
+      {/* RegulatoryBenefitsSection hidden to protect IP details */}
+      {/* <RegulatoryBenefitsSection /> */}
       <InvestigationROICalculator />
       <ToolsSection />
       <LeadMagnetsSection />
