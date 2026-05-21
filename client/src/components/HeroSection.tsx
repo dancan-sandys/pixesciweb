@@ -257,10 +257,10 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight"
           >
-            Turn Hours of Manual Investigation
+            One AI Agent for Your
             <br className="hidden md:block" />
             <span className="block mt-2 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
-              Into Minutes of Automated Compliance
+              Entire Lab Software Stack
             </span>
           </motion.h1>
           
@@ -270,7 +270,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground mb-4 leading-relaxed max-w-3xl mx-auto"
           >
-            PixeSci connects your CDS, LIMS, ELN, and QMS into one audit-ready workflow engine for regulated labs. Built for 21 CFR Part 11 compliance from day one.
+            PixeSci connects all your lab systems (CDS, LIMS, ELN, QMS) so you can control them with simple commands. Ask questions across tools, automate workflows, and get audit-ready results.
           </motion.p>
           
           <motion.div
