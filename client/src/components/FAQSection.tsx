@@ -12,28 +12,36 @@ const CALENDAR_URL = "https://cal.com/pixesci/30min?user=pixesci&overlayCalendar
 
 const faqs = [
   {
-    question: "Will it work with my specific analysis workflow?",
-    answer: "Yes. PixeSci learns your lab's unique procedures and adapts to your specific needs. Whether you're using standard protocols or custom pipelines, our AI understands context and can be trained on your specific workflows.",
+    question: "Is PixeSci 21 CFR Part 11 compliant?",
+    answer: "Yes. PixeSci is built from the ground up for regulated environments with 21 CFR Part 11 compliance, ALCOA+ data integrity, electronic signatures, and complete audit trails. Every action creates compliant documentation automatically.",
   },
   {
-    question: "What about data security?",
-    answer: "Your data never leaves your computer unless you explicitly choose cloud processing. We take research-grade security seriously with SOC 2 compliance, end-to-end encryption, and no data retention policies. Your proprietary research stays private.",
+    question: "Can PixeSci be deployed air-gapped?",
+    answer: "Absolutely. PixeSci is designed for on-premises, air-gapped deployment within your network. Patient data, IP, and proprietary information never leave your environment. No cloud dependencies are required for operation.",
   },
   {
-    question: "How does PixeSci integrate with my existing software?",
-    answer: "PixeSci works alongside your current tools without requiring any changes to your existing setup. It communicates with software like FlowJo, Prism, Benchling, and 40+ others through their native APIs and automation interfaces.",
+    question: "How does it handle electronic signatures and audit trails?",
+    answer: "Electronic signatures and audit trails are core to PixeSci's architecture, not add-ons. Every workflow step, data transfer, and decision is automatically logged with user identification, timestamps, and full traceability for regulatory review.",
   },
   {
-    question: "How much will it cost?",
-    answer: "We offer flexible pricing based on lab size and usage. Early access users receive special founding member pricing with significant discounts. Schedule a demo to discuss pricing options tailored to your needs.",
+    question: "What happens during FDA audits?",
+    answer: "PixeSci generates audit-ready documentation automatically. Auditors can trace every result back through all connected systems with complete provenance. Our pre-submission review models (roadmap) will flag potential issues before they reach auditors.",
   },
   {
-    question: "When will it be available?",
-    answer: "Our beta launches in Q1 2026. By joining the waitlist now, you'll get priority access, dedicated onboarding support, and the opportunity to shape the product with your feedback.",
+    question: "How does PixeSci integrate with our CDS, LIMS, ELN, and QMS?",
+    answer: "PixeSci connects to your existing systems through validated APIs and connectors. We support major platforms like Empower, LabWare, Benchling, Qualio, and others. No changes to your current validated systems are required.",
   },
   {
-    question: "Do I need any technical expertise to use PixeSci?",
-    answer: "Not at all. PixeSci is designed for scientists, not programmers. You interact using natural language commands just like talking to a colleague. Say what you want to accomplish, and PixeSci handles the technical details.",
+    question: "What about validation and change control?",
+    answer: "PixeSci includes validation documentation templates and change control workflows. We provide IQ/OQ/PQ protocols, validation master plans, and ongoing change documentation to support your GxP requirements.",
+  },
+  {
+    question: "How long does deployment take in a GxP environment?",
+    answer: "Typical deployment in regulated environments takes 2-3 months including validation activities. We provide dedicated validation support, pre-built documentation templates, and experienced GxP deployment specialists.",
+  },
+  {
+    question: "Can it work with BSL3/4 lab requirements?",
+    answer: "Yes. PixeSci is designed for high-security environments including BSL3/4 facilities. Air-gapped deployment, local AI models, and security controls meet the strictest containment and IP protection requirements.",
   },
 ];
 

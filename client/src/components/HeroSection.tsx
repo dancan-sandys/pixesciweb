@@ -6,11 +6,11 @@ import { ArrowRight, Play } from "lucide-react";
 const CALENDAR_URL = "https://cal.com/pixesci/30min?user=pixesci&overlayCalendar=true";
 
 const typewriterPhrases = [
-  "analyzing flow cytometry data",
-  "processing microscopy images", 
-  "running genomics pipelines",
-  "orchestrating lab workflows",
-  "generating publication figures",
+  "connecting CDS, LIMS, ELN, and QMS systems",
+  "automating investigation workflows across lab tools", 
+  "generating audit-ready compliance reports",
+  "streamlining method validation workflows",
+  "orchestrating regulated lab operations",
 ];
 
 function useTypewriter(phrases: string[], typingSpeed = 80, deletingSpeed = 40, pauseDuration = 2000) {
@@ -162,11 +162,11 @@ function AnimatedGradient() {
 function TerminalPreview() {
   const [step, setStep] = useState(0);
   const steps = [
-    { type: "input", text: "> Analyze flow cytometry data and graph in Prism" },
-    { type: "output", text: "Connecting to FlowJo..." },
-    { type: "output", text: "Processing 12 samples..." },
-    { type: "output", text: "Exporting to GraphPad Prism..." },
-    { type: "success", text: "Analysis complete. Publication-ready figures generated." },
+    { type: "input", text: "> Show me every assay where cytokine response correlated with reagent lot B17" },
+    { type: "output", text: "Querying LIMS for lot B17 usage..." },
+    { type: "output", text: "Cross-referencing ELN experiment records..." },
+    { type: "output", text: "Analyzing plate reader data patterns..." },
+    { type: "success", text: "Found correlation: 14 experiments, 12 passed, 2 flagged OOS on same instrument." },
   ];
 
   useEffect(() => {
@@ -257,10 +257,10 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight"
           >
-            Stop Fighting Software.
+            Turn Hours of Manual Investigation
             <br className="hidden md:block" />
             <span className="block mt-2 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
-              Start Doing Science.
+              Into Minutes of Automated Compliance
             </span>
           </motion.h1>
           
@@ -270,7 +270,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground mb-4 leading-relaxed max-w-3xl mx-auto"
           >
-            PixeSci is an AI-powered automation layer that orchestrates complex workflows across your entire scientific software ecosystem.
+            PixeSci connects your CDS, LIMS, ELN, and QMS into one audit-ready workflow engine for regulated labs. Built for 21 CFR Part 11 compliance from day one.
           </motion.p>
           
           <motion.div
@@ -292,10 +292,10 @@ export function HeroSection() {
             <Button
               size="lg"
               className="text-base px-8 min-h-12 font-semibold group"
-              onClick={scrollToSignupForm}
-              data-testid="button-hero-get-early-access"
+              onClick={openCalendar}
+              data-testid="button-hero-see-compliance-demo"
             >
-              Get early access
+              See 21 CFR Part 11 demo
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
@@ -306,16 +306,16 @@ export function HeroSection() {
               data-testid="button-hero-see-demo"
             >
               <Play className="mr-2 w-4 h-4" />
-              See it in action
+              Watch investigation demo
             </Button>
             <Button
               size="lg"
               variant="ghost"
               className="text-base px-8 min-h-12 font-semibold"
-              onClick={openCalendar}
-              data-testid="button-hero-get-demo"
+              onClick={scrollToSignupForm}
+              data-testid="button-hero-get-early-access"
             >
-              Schedule a demo
+              Get pilot access
             </Button>
           </motion.div>
         </motion.div>

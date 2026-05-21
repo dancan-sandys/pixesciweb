@@ -1,31 +1,31 @@
 import { motion } from "framer-motion";
-import { MousePointer, BookOpen, Clock, DollarSign, RefreshCcw, TrendingDown, Target } from "lucide-react";
+import { AlertTriangle, Clock, FileSearch, Database, RefreshCcw, Target } from "lucide-react";
 
 const painPoints = [
   {
-    icon: MousePointer,
-    title: "\"I spend more time copying data between FlowJo and Prism than analyzing it.\"",
-    description: "You shouldn't need 5 tools open just to make one figure.",
-  },
-  {
-    icon: BookOpen,
-    title: "\"It takes months to train new lab members on all our software.\"",
-    description: "Your postdocs should be doing science, not software tutorials.",
-  },
-  {
     icon: Clock,
-    title: "\"I'm manually moving data between Benchling and ImageJ every single day.\"",
-    description: "You keep thinking 'there has to be a better way.' There is.",
+    title: "\"When our plate reader shows unexpected results, I spend 4+ hours manually checking reagent lots, analyst records, and calibration logs.\"",
+    description: "Investigation time should be minutes, not half your day.",
   },
   {
-    icon: DollarSign,
-    title: "\"We pay thousands for Imaris but barely use half its features.\"",
-    description: "Your expensive tools should work for you, not collect dust.",
+    icon: FileSearch,
+    title: "\"Every FDA audit means weeks of manually reconstructing what happened across our CDS, LIMS, ELN, and QMS.\"",
+    description: "Audit trails should be automatic, not archaeological expeditions.",
+  },
+  {
+    icon: Database,
+    title: "\"I can't ask simple questions like 'show me every batch where lot B17 was used' without opening 4 different systems.\"", 
+    description: "Your lab data should be queryable in plain English.",
+  },
+  {
+    icon: AlertTriangle,
+    title: "\"Transcription errors between our CDS and LIMS have caused three batch failures this month.\"",
+    description: "Manual data transfer introduces human error into critical processes.",
   },
   {
     icon: RefreshCcw,
-    title: "\"I do the same 20-click workflow every morning before I can start real work.\"",
-    description: "Your routine tasks should run themselves.",
+    title: "\"QC review takes 3 days because approvers have to piece together context from disconnected systems.\"",
+    description: "Approval workflows should have complete context, not require detective work.",
   },
 ];
 
@@ -64,10 +64,11 @@ export function ProblemSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-            Does This Sound Like Your Day?
+            The Hidden Cost of Fragmented Lab Systems
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            You didn't get a PhD to fight with software. Here's what we hear from researchers like you.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            QC Directors and Lab Managers in regulated environments tell us these stories every day. 
+            Sound familiar?
           </p>
         </motion.div>
 
@@ -117,7 +118,7 @@ export function ProblemSection() {
           <div className="inline-flex items-center gap-3 px-6 py-4 rounded-xl bg-primary/5 border border-primary/20">
             <Target className="w-5 h-5 text-primary flex-shrink-0" />
             <span className="text-foreground font-medium">
-              PixeSci eliminates these bottlenecks with intelligent automation
+              PixeSci connects every system into one audit-ready workflow engine
             </span>
           </div>
         </motion.div>
