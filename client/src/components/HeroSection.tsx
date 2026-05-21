@@ -11,6 +11,7 @@ const typewriterPhrases = [
   "generating audit-ready compliance reports",
   "streamlining method validation processes",
   "orchestrating regulated lab operations",
+  "integrating analytical software workflows",
 ];
 
 function useTypewriter(phrases: string[], typingSpeed = 80, deletingSpeed = 40, pauseDuration = 2000) {
