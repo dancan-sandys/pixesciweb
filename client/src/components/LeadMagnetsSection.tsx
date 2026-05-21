@@ -131,7 +131,7 @@ export function LeadMagnetsSection() {
           <div className="inline-flex items-center gap-2 px-6 py-3 bg-muted rounded-lg">
             <Shield className="w-5 h-5 text-primary" />
             <span className="text-sm font-medium">
-              No spam. No sales calls. Just practical compliance guidance from our regulatory experts.
+              No spam. No sales calls. Just practical guidance for lab automation decisions.
             </span>
           </div>
         </motion.div>

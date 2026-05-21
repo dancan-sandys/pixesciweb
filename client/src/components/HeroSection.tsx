@@ -7,9 +7,9 @@ const CALENDAR_URL = "https://cal.com/pixesci/30min?user=pixesci&overlayCalendar
 
 const typewriterPhrases = [
   "connecting CDS, LIMS, ELN, and QMS systems",
-  "automating investigation workflows across lab tools", 
+  "automating workflows across lab management tools", 
   "generating audit-ready compliance reports",
-  "streamlining method validation workflows",
+  "streamlining method validation processes",
   "orchestrating regulated lab operations",
 ];
 
